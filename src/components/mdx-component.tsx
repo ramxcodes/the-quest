@@ -11,7 +11,7 @@ import { Activity } from "./Activity";
 import Cal from "./Cal";
 import Sleep from "./Sleep";
 import Running from "./Running";
-import YouTube from "./Youtube";
+import YouTube from "./YouTube";
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code);
