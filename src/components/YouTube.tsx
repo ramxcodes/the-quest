@@ -13,32 +13,27 @@ export default function YouTube({
   width = 315,
   height = 560,
 }: YouTubeProps) {
-  // Ensure we have a proper absolute URL
   const normalizedSrc = src.startsWith("http") ? src : `https://${src}`;
 
   let embedUrl = normalizedSrc;
 
   try {
     const url = new URL(normalizedSrc);
-    // If it's a Shorts URL, replace '/shorts/' with '/embed/'
     if (
       url.hostname.includes("youtube.com") &&
       url.pathname.startsWith("/shorts/")
     ) {
       embedUrl = normalizedSrc.replace("/shorts/", "/embed/");
     } else if (url.hostname === "youtu.be") {
-      // Handle the youtu.be short URL
       const videoId = url.pathname.slice(1);
       embedUrl = `https://www.youtube.com/embed/${videoId}`;
     } else if (url.hostname.includes("youtube.com")) {
-      // If it's a standard watch URL, extract the video ID
       if (url.pathname === "/watch") {
         const videoId = url.searchParams.get("v");
         if (videoId) {
           embedUrl = `https://www.youtube.com/embed/${videoId}`;
         }
       }
-      // If it's already an embed URL, we can leave it as is.
     }
   } catch (error) {
     console.error("Invalid URL provided to YouTube component:", normalizedSrc);

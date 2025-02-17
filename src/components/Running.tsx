@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "motion/react";
 import { animate } from "motion";
-import confetti from "canvas-confetti";
 import { RefreshCw } from "lucide-react";
 
 interface RunningProps {
@@ -31,18 +30,6 @@ export default function Running({
     });
     return controls.stop;
   }, [achieved]);
-
-  React.useEffect(() => {
-    if (achieved >= goal) {
-      setTimeout(() => {
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 },
-        });
-      }, 1000);
-    }
-  }, [achieved, goal]);
 
   return (
     <div className="mt-4 w-full rounded-lg border bg-card p-6">
