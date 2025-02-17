@@ -2,19 +2,25 @@
 import { cn } from "@/lib/utils";
 import React, { HTMLAttributes } from "react";
 import * as runtime from "react/jsx-runtime";
+import { ArrowUpRight } from "lucide-react";
 
 import Image from "next/image";
 import { TimelineCard } from "./TimelineCard";
 import { Todo } from "./Todo";
 import { Activity } from "./Activity";
 import Cal from "./Cal";
+import Sleep from "./Sleep";
+import Running from "./Running";
+import YouTube from "./Youtube";
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code);
   return fn({ ...runtime }).default;
 };
 
-type ComponentsProps = HTMLAttributes<HTMLElement>;
+type ComponentsProps = HTMLAttributes<HTMLElement> &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> &
+  React.OlHTMLAttributes<HTMLOListElement>;
 
 const components = {
   h1: ({ className, ...props }: ComponentsProps) => (
@@ -71,14 +77,19 @@ const components = {
       {...props}
     />
   ),
-  a: ({ className, ...props }: ComponentsProps) => (
+  a: ({ className, children, ...props }: ComponentsProps) => (
     <a
       className={cn(
-        "font-medium underline text-primary underline-offset-4",
+        "font-medium underline transition-all duration-300 text-primary hover:text-primary/50 underline-offset-4 group",
         className
       )}
       {...props}
-    />
+    >
+      {children}
+      {typeof props.href === "string" && !props.href.startsWith("#") && (
+        <ArrowUpRight className="inline-block size-4 font-medium text-primary underline underline-offset-4 transition-all duration-300 group-hover:scale-110 group-hover:text-primary/50" />
+      )}
+    </a>
   ),
   p: ({ className, ...props }: ComponentsProps) => (
     <p
@@ -145,7 +156,7 @@ const components = {
   pre: ({ className, ...props }: ComponentsProps) => (
     <pre
       className={cn(
-        "mb-4 mt-6 overflow-x-auto text-sm  rounded-lg border !bg-secondary py-4",
+        "mb-4 mt-6 overflow-x-auto text-sm rounded-lg border !bg-secondary py-4",
         className
       )}
       {...props}
@@ -164,7 +175,10 @@ const components = {
   TimelineCard,
   Todo,
   Activity,
-  Cal
+  Cal,
+  Sleep,
+  Running,
+  YouTube
 };
 
 interface MdxProps {

@@ -22,7 +22,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
   details = [],
 }) => {
   return (
-    <div className="relative my-8 border-l-2 border-gray-300 pl-6">
+    <div className="relative border-l-2 border-gray-300 pl-6">
       <div className="absolute -left-3 top-0 flex size-6 items-center justify-center rounded-full bg-primary text-white">
         {icon || "✅"}
       </div>

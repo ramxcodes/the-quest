@@ -4,131 +4,99 @@ title: "Day 2 - It's Like a Game"
 description: "Game mode on - Be stronger than your excuses." 
 date: "2024-02-17"
 author: "ramxcodes"
-published: false
+published: true
 image: "/images/blog/day-2.png"
 achievements:
   dsa: 0
   money: 0
-  workout: false
+  workout: true
 ---
 
-# Day 1 - Starting Strong
+# Day 2 - It's Like a Game
 
-Today i finally finished this website. Now its time to start the journey.
+This is **Day 2** of this challenge
 
-Today's TODO's are:
+#### Today's TODO's are:
 
-<Todo title="Complete the website" status="TODO" />
-<Todo title="SS-VI assessment test" status="TODO" />
-<Todo title="Internship work" status="TODO" />
-<Todo title="Do some DSA" status="TODO" />
+<Todo title="Continue Hunx course" status="TODO" />
+<Todo title="Internship new project work" status="TODO" />
+<Todo title="Running and workout" status="TODO" />
+<Todo title="Optimized Telegram profile for CLients" status="TODO" />
 
 
 ---
 
+<Sleep title="something" sleptFor="4.2" score="48" from="5:20 AM" to="9:00 AM" />
+---
 <TimelineCard 
-  time="5:30 PM" 
+  time="9:00 AM" 
   title="Woke Up" 
-  description="Checked the phone for any important notifications and there were a lot of them." 
+  description="Woke up and freshened up." 
   icon="🌅"
   details={[
     { 
-      title: "6:00 - 8:00 PM Internship Work", 
-      description: "Created 4 logo for client.", 
+      title: "9:00 - 9:50 AM - Ready for the college", 
+      description: "Always in rush hehehehe.", 
     },
     { 
-      title: "8:00 - 10:00 PM", 
-      description: "Worked on this website.", 
+      title: "10:00 - 10:30 AM - Reached College", 
+      description: "Hush some how.", 
     }
   ]}
 />
 
-Then there was a soft skill assessment test which i gave barely made it in time.
-11:00 pm onwards i was working on this website. 
-
-So, far i was following [Hunx DSA Tutorial](https://www.youtube.com/@huxnwebdev).
-
-Learned to create custom array & array method in javascript.
-i created 4 methods till now `push`, `get`, `pop`, `shift`.
-
-```javascript
-class myArray {
-  constructor() {
-    this.length = 0;
-    this.data = {};
-  }
-  push(item) {
-    // console.log(item);
-
-    this.data[this.length] = item;
-
-    // console.log("-------");
-    // console.log(this.data);
-
-    this.length++;
-
-    // console.log("-------");
-    // console.log(this.length);
-
-    return this.length;
-  }
-
-  get(index) {
-    return this.data[index];
-  }
-
-  pop() {
-    const lastItem = this.data[this.length - 1];
-    // console.log(lastItem);
-
-    delete this.data[this.length - 1];
-    this.length--;
-
-    return lastItem;
-  }
-
-  shift() {
-    const firstItem = this.data[0];
-
-    for (let i = 0; i < this.length; i++) {
-      this.data[i] = this.data[i + 1];
+<TimelineCard 
+  time="10:30 AM - 11:20 AM" 
+  title="DAA Lecture" 
+  description="Solved 3 Question of DSA - Heap sort etc." 
+  icon="🧑🏻‍🎓"
+  details={[
+    { 
+      title: "11:30 - 12:15 PM - XML Lecture", 
+      description: "Worked on Notesbuddy the professor is sooo pookie. She liked the project", 
+    },
+    { 
+      title: "12:15 - 01:15 PM - BREAK",
+      icon: "🍔", 
+    },
+    { 
+      title: "01:30 - 03:00 PM - MINI PROJECT LAB", 
+      description: "Worked on Notesbuddy chill pill", 
+    },
+    { 
+      title: "03:00 - 04:00 PM - Research Methodology Lecture", 
+      description: "Again working on improving the project.", 
+    },
+    {
+      title: "04:00 - 05:00 PM - Agile Development",
+      description: "Slept hehe.",
+    },
+    {
+      title: "05:00 - 06:00 PM - Back to home",
+      description: "Back to home enjoyed momos.",
     }
+  ]}
+/>
 
-    delete this.data[this.length - 1];
+Back to home freshened up and enjoyed sometime watching [Youtube](https://youtube.com).
 
-    return firstItem;
-  }
-}
+Than i went for running and workout.
 
-const myNewArray = new myArray();
+<Running achieved="1.16" goal="1" pace="8.56" duration="10:23" />
 
-myNewArray.push(123);
-myNewArray.push("orange");
-myNewArray.push("Dick");
-myNewArray.push("Lemon");
-myNewArray.push(true);
+Here is a video of doing pull ups.
 
-console.log("--------------------------------------");
+<YouTube src="https://www.youtube.com/shorts/jn25BaNBQR0" />
 
-console.log("PRE --", myNewArray);
+I was not able to complete DSA & Optimized my Telegram profile.
 
-// console.log(myNewArray.get(1));
-
-// myNewArray.pop();
-
-console.log(myNewArray.shift());
-
-
-console.log("AFT --", myNewArray);
-
-```
-<Todo title="Complete the website" status="completed" />
-<Todo title="SS-VI assessment test" status="completed" />
-<Todo title="Internship work" status="completed" />
-<Todo title="Do some DSA" status="failed" />
+<Todo title="Continue Hunx course" status="failed" />
+<Todo title="Internship new project work" status="completed" />
+<Todo title="Running and workout" status="completed" />
+<Todo title="Optimized Telegram profile for CLients" status="failed" />
 
 So todays summary is :
 
-<Activity dsa={0} money={0} workout={false} />
+<Activity dsa={0} money={0} workout={true} />
 
 See you guys tomorrow 🙋🏻‍♂️
