@@ -54,7 +54,7 @@ export default function Running({
         <div className="mt-4 space-y-2">
           <div className="flex justify-between text-sm text-muted-foreground">
             <span>
-              {animatedAchieved} km / {goal} Km
+             Achieved {animatedAchieved} km / {goal} Goal Km
             </span>
           </div>
           <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">
