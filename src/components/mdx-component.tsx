@@ -178,7 +178,7 @@ const components = {
   Cal,
   Sleep,
   Running,
-  YouTube
+  YouTube,
 };
 
 interface MdxProps {
