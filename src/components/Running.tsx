@@ -41,8 +41,9 @@ export default function Running({
           <RefreshCw className="size-6 text-muted-foreground" />
         </div>
         <h3 className="text-xl font-semibold text-primary">
-          🏃🏻‍♂️‍➡️ Running Stat
+          🏃🏻‍♂️‍➡️ Running Statics
         </h3>
+        <hr className="my-4 w-1/2" />
         <h4 className="text-base">
           Average Pace :
           <span className="font-bold text-primary"> {pace}/km </span>
