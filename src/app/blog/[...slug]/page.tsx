@@ -33,8 +33,6 @@ export async function generateMetadata({
     return {};
   }
 
-  // Use blog.image as the OpenGraph image.
-  // If blog.image is a relative path, prepend with NEXT_PUBLIC_APP_URL.
   const ogImageUrl = blog.image?.startsWith("http")
     ? blog.image
     : `${process.env.NEXT_PUBLIC_APP_URL}${blog.image}`;

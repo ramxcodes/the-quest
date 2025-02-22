@@ -28,19 +28,16 @@ export const metadata: NextMetadata = {
 export default function Home() {
   const blogs = allBlogs.filter((blog) => blog.published);
 
-  // Calculate total DSA questions solved
   const dsaAchieved = blogs.reduce(
     (total, blog) => total + (blog.achievements?.dsa || 0),
     0
   );
 
-  // Calculate total money earned
   const moneyAchieved = blogs.reduce(
     (total, blog) => total + (blog.achievements?.money || 0),
     0
   );
 
-  // Calculate workout streak days (for the Physique progress card)
   const sortedBlogsDesc = [...blogs].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
@@ -48,8 +45,6 @@ export default function Home() {
   for (const blog of sortedBlogsDesc) {
     if (blog.achievements?.workout) {
       daysAchieved++;
-    } else {
-      break;
     }
   }
 
@@ -82,10 +77,8 @@ export default function Home() {
           {siteConfig.description}
         </p>
 
-        {/* Countdown Timer */}
         <CountdownTimer />
 
-        {/* Progress Cards */}
         <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <ProgressCard
             title="DSA in JS"
